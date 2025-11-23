@@ -37,47 +37,6 @@ public class EstoqueController {
         return enviarComoLista("listarProdutos", Collections.emptyMap());
     }
 
-    public String cadastrarCategoria(String nome, String tamanho, String embalagem) {
-        Map<String, String> dados = new HashMap<>();
-        dados.put("nome", nome);
-        dados.put("tamanho", tamanho);
-        dados.put("embalagem", embalagem);
-        return enviar("cadastrarCategoria", dados);
-    }
-
-    public List<String> listarCategorias() {
-        return enviarComoLista("listarCategorias", Collections.emptyMap());
-    }
-
-    public String registrarMovimentacao(String produtoId, String tipo, int quantidade, String data) {
-        Map<String, String> dados = new HashMap<>();
-        dados.put("produtoId", produtoId);
-        dados.put("tipo", tipo);
-        dados.put("quantidade", String.valueOf(quantidade));
-        dados.put("data", data);
-        return enviar("registrarMovimentacao", dados);
-    }
-
-    public List<String> listarMovimentacoes() {
-        return enviarComoLista("listarMovimentacoes", Collections.emptyMap());
-    }
-
-    public String gerarRelatorio(String tipo) {
-        Map<String, String> dados = new HashMap<>();
-        dados.put("relatorio", tipo);
-        return enviar("gerarRelatorio", dados);
-    }
-
-    public String reajustarPrecos(double percentual) {
-        Map<String, String> dados = new HashMap<>();
-        dados.put("percentual", String.valueOf(percentual));
-        return enviar("reajustarPrecos", dados);
-    }
-
-    public String limparTudo() {
-        return enviar("limparTudo", Collections.emptyMap());
-    }
-
     private String enviar(String acao, Map<String, String> dados) {
         try {
             return clienteSocket.enviar(acao, dados);
