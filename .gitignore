@@ -1,6 +1,17 @@
 # Arquivos compilados
 target/
 *.class
+bin/
+
+# Banco de dados
+*.db
+estoque.db
+
+# Logs e processos
+*.log
+*.pid
+servidor.log
+servidor.pid
 
 # IDEs
 .idea/
@@ -12,7 +23,3 @@ target/
 # Sistema operacional
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-
