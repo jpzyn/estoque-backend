@@ -37,6 +37,10 @@ public class EstoqueController {
         return enviarComoLista("listarProdutos", Collections.emptyMap());
     }
 
+    public List<String> listarCategorias() {
+        return enviarComoLista("listarCategorias", Collections.emptyMap());
+    }
+
     private String enviar(String acao, Map<String, String> dados) {
         try {
             return clienteSocket.enviar(acao, dados);
