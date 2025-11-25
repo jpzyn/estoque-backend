@@ -1,3 +1,8 @@
+package dao;
+
+import model.Movimentacao;
+import model.Produto;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -61,4 +66,3 @@ public class MovimentacaoDAO {
         movimentacoes.clear();
     }
 }
-

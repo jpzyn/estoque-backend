@@ -1,8 +1,6 @@
-public class Categoria {
-    private String nome;
-    private Tamanho tamanho;
-    private Embalagem embalagem;
+package model;
 
+public class Categoria {
     public enum Tamanho {
         PEQUENO,
         MEDIO,
@@ -15,8 +13,9 @@ public class Categoria {
         PLASTICO
     }
 
-    public Categoria() {
-    }
+    private String nome;
+    private Tamanho tamanho;
+    private Embalagem embalagem;
 
     public Categoria(String nome, Tamanho tamanho, Embalagem embalagem) {
         this.nome = nome;
@@ -28,32 +27,12 @@ public class Categoria {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public Tamanho getTamanho() {
         return tamanho;
-    }
-
-    public void setTamanho(Tamanho tamanho) {
-        this.tamanho = tamanho;
     }
 
     public Embalagem getEmbalagem() {
         return embalagem;
     }
-
-    public void setEmbalagem(Embalagem embalagem) {
-        this.embalagem = embalagem;
-    }
-
-    @Override
-    public String toString() {
-        return "Categoria{" +
-                "nome='" + nome + '\'' +
-                ", tamanho=" + tamanho +
-                ", embalagem=" + embalagem +
-                '}';
-    }
 }
+

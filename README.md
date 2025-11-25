@@ -1,28 +1,48 @@
-# 🏪 Sistema de Controle de Estoque
+# 🏪 Sistema de Controle de Estoque - Backend Parcial
 
-Este sistema foi desenvolvido em Java utilizando arquitetura distribuída (cliente-servidor)
-para controle de produtos, categorias e movimentações de estoque.
+Este módulo representa a evolução do backend até o estágio em que **Produtos** e **Categorias** já estão disponíveis, enquanto as demais funcionalidades permanecem em desenvolvimento.
 
 ## ⚙️ Tecnologias
 - Java 17
-- Socket (para comunicação entre cliente e servidor)
-- Maven
-- GitHub
+- Sockets (ServerSocket/Socket)
+- Coleções em memória (simples DAO)
 
-## 📦 Funcionalidades
-- CRUD de Produtos
-- CRUD de Categorias
-- CRUD de Movimentações (Entrada/Saída)
-- Relatórios:
-  - Lista de preços
-  - Balanço físico/financeiro
-  - Produtos abaixo do mínimo
-  - Quantidade por categoria
-  - Produto com mais entrada/saída
+## 📊 Status das Funcionalidades
+| Módulo         | Situação             | Observação                              |
+| -------------- | -------------------- | --------------------------------------- |
+| Produtos       | ✅ Implementado       | Cadastro e listagem completos           |
+| Categorias     | ✅ Implementado       | Cadastro com Tamanho e Embalagem        |
+| Movimentações  | ⏳ Em desenvolvimento | Protocolos respondem com placeholder    |
+| Relatórios     | ⏳ Em desenvolvimento | Protocolos respondem com placeholder    |
 
-## 👥 Autores
-- João Pedro Nobile dos Santos (RA: 1072411014)
+## 🚀 Como Executar
 
-## 🔗 Repositórios
-- [Front-end](https://github.com/jpzyn/estoque-frontend)
-- [Back-end](https://github.com/jpzyn/estoque-backend)
+Compile:
+```bash
+javac -d target/classes src/model/*.java src/dao/*.java src/server/Servidor.java
+```
+
+Execute:
+```bash
+java -cp target/classes server.Servidor
+```
+
+O servidor escuta na porta `12345` e compreende os seguintes comandos:
+
+### Formato `chave=valor`
+```
+acao=cadastrarProduto;nome=Arroz;categoria=Grãos;estoqueInicial=100;estoqueMinimo=10;estoqueMaximo=200;preco=9.90;unidade=kg
+acao=listarProdutos
+acao=cadastrarCategoria;nome=Grãos;tamanho=MEDIO;embalagem=LATA
+acao=listarCategorias
+```
+
+### Formato com `|`
+```
+PRODUTO_CRIAR|Arroz|Graos|100|10|200|9.90
+PRODUTO_LISTAR
+CATEGORIA_CRIAR|Graos|MEDIO|LATA
+CATEGORIA_LISTAR
+```
+
+Demais comandos retornam `FUNCIONALIDADE_EM_DESENVOLVIMENTO`.

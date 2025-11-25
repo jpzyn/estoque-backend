@@ -1,3 +1,8 @@
+package dao;
+
+import model.Categoria;
+import model.Produto;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -73,4 +78,3 @@ public class ProdutoDAO {
         proximoId = 1;
     }
 }
-

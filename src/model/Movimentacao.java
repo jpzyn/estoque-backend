@@ -1,3 +1,5 @@
+package model;
+
 import java.time.LocalDateTime;
 
 public class Movimentacao {
@@ -60,14 +62,14 @@ public class Movimentacao {
         }
 
         if (tipo == TipoMovimentacao.SAIDA) {
-            int novaQuantidade = produto.getQuantidadeEstoque() - quantidade;
-            if (novaQuantidade < produto.getQuantidadeMinima()) {
-                throw new Exception("Atenção: Pouco estoque após a movimentação!");
+            int novaQuantidade = produto.getEstoqueAtual() - quantidade;
+            if (novaQuantidade < 0) {
+                throw new Exception("Estoque insuficiente. Estoque atual: " + produto.getEstoqueAtual());
             }
         } else {
-            int novaQuantidade = produto.getQuantidadeEstoque() + quantidade;
-            if (novaQuantidade > produto.getQuantidadeMaxima()) {
-                throw new Exception("Atenção: Excede a capacidade máxima de estoque!");
+            int novaQuantidade = produto.getEstoqueAtual() + quantidade;
+            if (novaQuantidade > produto.getEstoqueMaximo()) {
+                throw new Exception("Atenção: Excede a capacidade máxima de estoque! Máximo permitido: " + produto.getEstoqueMaximo());
             }
         }
     }
