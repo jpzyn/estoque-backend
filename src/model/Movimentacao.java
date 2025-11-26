@@ -62,14 +62,14 @@ public class Movimentacao {
         }
 
         if (tipo == TipoMovimentacao.SAIDA) {
-            int novaQuantidade = produto.getEstoqueAtual() - quantidade;
+            int novaQuantidade = produto.getQuantidadeEstoque() - quantidade;
             if (novaQuantidade < 0) {
-                throw new Exception("Estoque insuficiente. Estoque atual: " + produto.getEstoqueAtual());
+                throw new Exception("Estoque insuficiente. Estoque atual: " + produto.getQuantidadeEstoque());
             }
         } else {
-            int novaQuantidade = produto.getEstoqueAtual() + quantidade;
-            if (novaQuantidade > produto.getEstoqueMaximo()) {
-                throw new Exception("Atenção: Excede a capacidade máxima de estoque! Máximo permitido: " + produto.getEstoqueMaximo());
+            int novaQuantidade = produto.getQuantidadeEstoque() + quantidade;
+            if (novaQuantidade > produto.getQuantidadeMaxima()) {
+                throw new Exception("Atenção: Excede a capacidade máxima de estoque! Máximo permitido: " + produto.getQuantidadeMaxima());
             }
         }
     }

@@ -56,5 +56,46 @@ public class Produto {
     public void setEstoqueAtual(int estoqueAtual) {
         this.estoqueAtual = estoqueAtual;
     }
+
+    // Métodos alternativos para compatibilidade
+    public double getPrecoUnitario() {
+        return preco;
+    }
+
+    public void setPrecoUnitario(double preco) {
+        this.preco = preco;
+    }
+
+    public int getQuantidadeEstoque() {
+        return estoqueAtual;
+    }
+
+    public void setQuantidadeEstoque(int quantidadeEstoque) {
+        this.estoqueAtual = quantidadeEstoque;
+    }
+
+    public int getQuantidadeMinima() {
+        return estoqueMinimo;
+    }
+
+    public void setQuantidadeMinima(int quantidadeMinima) {
+        this.estoqueMinimo = quantidadeMinima;
+    }
+
+    public int getQuantidadeMaxima() {
+        return estoqueMaximo;
+    }
+
+    public void setQuantidadeMaxima(int quantidadeMaxima) {
+        this.estoqueMaximo = quantidadeMaxima;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setUnidade(String unidade) {
+        this.unidade = unidade;
+    }
 }
 

@@ -34,5 +34,13 @@ public class Categoria {
     public Embalagem getEmbalagem() {
         return embalagem;
     }
+
+    public void setTamanho(Tamanho tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public void setEmbalagem(Embalagem embalagem) {
+        this.embalagem = embalagem;
+    }
 }
 

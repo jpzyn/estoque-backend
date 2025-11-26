@@ -1,3 +1,12 @@
+package service;
+
+import dao.CategoriaDAO;
+import dao.MovimentacaoDAO;
+import dao.ProdutoDAO;
+import model.Categoria;
+import model.Movimentacao;
+import model.Produto;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
